@@ -20,41 +20,45 @@ const managerRole = [
     type: "input",
     name: "managerName",
     message: "Managers name?",
-    // validate: function (answer) {
-    //   if (answer.length < 1) {
-    //     return console.log("Please enter a name.");
-    //   }
-    //   return true;
-    // },
+    validate: function (answer) {
+      if (answer.length < 1) {
+        return console.log("Please enter a name.");
+      }
+      return true;
+    },
+  },
+  {
     type: "input",
     name: "managerID",
     message: "What is the managers ID?",
-    // validate: function (answer) {
-    //   if (answer.length < 1) {
-    //     return console.log("Please enter an ID");
-    //   }
-    //   return true;
-    // },
-
+    validate: function (answer) {
+      if (answer.length < 1) {
+        return console.log("Please enter an ID");
+      }
+      return true;
+    },
+  },
+  {
     type: "input",
     name: "managerNumber",
     message: "What is their office number?",
-    // validate: function (answer) {
-    //   if (answer.length < 1) {
-    //     return console.log("Please enter an office number.");
-    //   }
-    //   return true;
-    // },
-
+    validate: function (answer) {
+      if (answer.length < 1) {
+        return console.log("Please enter an office number.");
+      }
+      return true;
+    },
+  },
+  {
     type: "input",
     name: "managerEmail",
     message: "What is their email?",
-    // validate: function (answer) {
-    //   if (answer.length < 1) {
-    //     return console.log("Please enter an email address.");
-    //   }
-    //   return true;
-    // },
+    validate: function (answer) {
+      if (answer.length < 1) {
+        return console.log("Please enter an email address.");
+      }
+      return true;
+    },
   },
 ];
 
@@ -69,7 +73,8 @@ const engineerRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "engineerID",
     message: "What is the engineers ID?",
@@ -79,7 +84,8 @@ const engineerRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "engineerEmail",
     message: "What is the engineers email?",
@@ -89,7 +95,8 @@ const engineerRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "engineerGithub",
     message: "What is the engineers github?",
@@ -113,7 +120,8 @@ const internRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "internID",
     message: "What is the interns ID?",
@@ -123,7 +131,8 @@ const internRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "internEmail",
     message: "What is the interns email?",
@@ -133,7 +142,8 @@ const internRole = [
       }
       return true;
     },
-
+  },
+  {
     type: "input",
     name: "internSchool",
     message: "What school is the intern in?",
