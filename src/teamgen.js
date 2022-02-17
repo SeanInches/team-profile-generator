@@ -79,3 +79,43 @@ const renderIntern = (Intern) => {
         </div>
     </div>`;
 };
+
+function buildPage(renderTeam) {
+  return `<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous"
+        />
+      </head>
+    
+      <body>
+        <header class="bg-secondary py-5">
+          <div class="container px-1 px-lg-4 my-1">
+            <div class="text-center text-white">
+              <h1 class="fw-bolder">Team Profile Generator</h1>
+              <p class="">Manage your team</p>
+            </div>
+          </div>
+        </header>
+    
+        <section class="py-4">
+          <div class="py-4">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-center">
+            ${generateEmployees(renderTeam)}
+            </div>
+      </div>
+    </section>
+  </body>
+</html>
+`;
+}
+
+module.exports = buildPage;
