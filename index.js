@@ -1,9 +1,7 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const employee = require("./lib/employee");
-const engineer = require("./lib/engineer");
-const intern = require("./lib/intern");
-const manager = require("./lib/manager");
+const Inquirer = require("inquirer");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+const Manager = require("./lib/manager");
 const teamgen = require("./src/teamgen");
 
 const createTeam = [];
@@ -161,8 +159,7 @@ const engineers = [];
 const interns = [];
 
 function addEmployee() {
-  inquirer
-    .prompt(employeeRole)
+  Inquirer.prompt(employeeRole)
     .then((response) => {
       init(response.employeeRole);
       return;
@@ -176,10 +173,9 @@ function addEmployee() {
 
 function init(response) {
   if (response === "Manager") {
-    inquirer
-      .prompt(managerRole)
+    Inquirer.prompt(managerRole)
       .then((response) => {
-        const updateManager = new manager(
+        const updateManager = new Manager(
           response.managerName,
           response.managerID,
           response.managerEmail,
@@ -197,11 +193,10 @@ function init(response) {
   }
 
   if (response === "Engineer") {
-    inquirer
-      .prompt(engineerRole)
+    Inquirer.prompt(engineerRole)
 
       .then((response) => {
-        const updateEngineer = new engineer(
+        const updateEngineer = new Engineer(
           response.engineerName,
           response.engineerID,
           response.engineerEmail,
@@ -218,11 +213,10 @@ function init(response) {
       });
   }
   if (response === "Intern") {
-    inquirer
-      .prompt(internRole)
+    Inquirer.prompt(internRole)
 
       .then((response) => {
-        const updateIntern = new intern(
+        const updateIntern = new Intern(
           response.internName,
           response.internID,
           response.internEmail,
@@ -241,22 +235,20 @@ function init(response) {
 }
 
 function addNextemployee() {
-  inquirer
-    .prompt({
-      type: "list",
-      name: "addNew",
-      message: "Do you want to add another employee?",
-      choices: ["Yes", "No"],
-    })
-
-    .then((response) => {
-      if (response.addNew === "Yes") {
-        addEmployee();
-      }
-      if (response.addNew === "No") {
-        teamgen(managers, engineers, interns);
-      }
-    });
+  Inquirer.prompt({
+    type: "list",
+    name: "addNew",
+    message: "Do you want to add another employee?",
+    choices: ["Yes", "No"],
+  })
+  .then((response) => {
+    if (response.addNew === "Yes") {
+      addEmployee();
+    }
+    if (response.addNew === "No") {
+      teamgen(managers, engineers, interns);
+    }
+  });
 }
 
 addEmployee();
